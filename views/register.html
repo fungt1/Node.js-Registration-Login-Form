@@ -43,7 +43,8 @@
                   value="<%= typeof email != 'undefined' ? email : '' %>" />
               </div>
               <div class="form-group">
-                <label for="password" class="form-control-label" style="font-size: 15px;">Password</label>
+                <label for="password" class="form-control-label" style="font-size: 15px;">Password (Must be a minimum of
+                  6 characters)</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"
                   value="<%= typeof password != 'undefined' ? password : '' %>" />
               </div>
@@ -51,34 +52,50 @@
                 <label for="password2" class="form-control-label" style="font-size: 15px;">Confirm</label>
                 <input type="password" id="password2" name="password2" class="form-control"
                   placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
-              </div>
+                <label for="checkbox" class="form-control-label" style="font-size: 15px;">Show Password</label>
+                <input type="checkbox" onclick="showPassFunction()"></div>
+          </div>
 
-              <div class="col-lg-12 bttm">
-                <div class="col-lg-6 btm text">
+          <div class="col-lg-12 bttm">
+            <div class="col-lg-6 btm text">
 
-                </div>
-                <div class="col-lg-6 btm button">
-                  <button type="submit" class="btn btn-outline-primary">Register</button>
-                </div>
-              </div>
-
-            </form>
-            <div class="lead mt-4">
-              <a style="position:absolute;
-                              right: 85%;
-                              margin-bottom:100%;" href="/users/login">Login</a>
             </div>
-            <div class="lead mt-4">
-              <a style="position:absolute;
-                              left: 70%;
-                              margin-bottom:60%;" href="http://localhost:5000/">Welcome Page</a>
+            <div class="col-xs-12 col-md-12 btm button">
+              <button type="submit" class="btn btn-outline-primary">Register</button>
             </div>
           </div>
+
+          </form>
+          <div class="lead mt-4">
+            <a style="position:absolute;
+                              right: 85%;
+                              margin-bottom:100%;" href="/users/login">Login</a>
+          </div>
+          <div class="lead mt-4">
+            <a style="position:absolute;
+                              left: 70%;
+                              margin-bottom:60%;" href="/">Welcome Page</a>
+          </div>
         </div>
-        <div class="col-lg-3 col-md-2"></div>
       </div>
+      <div class="col-lg-3 col-md-2"></div>
     </div>
+  </div>
 
 </body>
+<script>
+  //show the password
+  function showPassFunction() {
+    var x = document.getElementById("password");
+    var y = document.getElementById("password2");
+    if (x.type && y.type === "password") {
+      x.type = "text";
+      y.type = "text";
+    } else {
+      x.type = "password";
+      y.type = "password";
+    }
+  }
+</script>
 
 </html>
