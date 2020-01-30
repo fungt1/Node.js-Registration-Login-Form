@@ -34,33 +34,47 @@
                                 <label class="form-control-label" style="font-size: 15px;">Password</label>
                                 <input type="password" id="password" name="password" class="form-control"
                                     placeholder="Enter Password" />
-                            </div>
+                                <label for="checkbox" class="form-control-label" style="font-size: 15px;">Show
+                                    Password</label>
+                                <input type="checkbox" onclick="showPassFunction()"></div>
+                    </div>
 
-                            <div class="col-lg-12 bttm">
-                                <div class="col-lg-6 btm text">
-                                    <!-- Error Message -->
-                                </div>
-                                <div class="col-lg-6 btm button">
-                                    <button type="submit" class="btn btn-outline-primary">Login</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="lead mt-4">
-                            <a style="position:absolute;
-                              right: 85%;
-                              margin-bottom:100%;" href="/users/register">Register</a>
+                    <div class="col-lg-12 bttm">
+                        <div class="col-lg-6 btm text">
+                            <!-- Error Message -->
                         </div>
-                        <div class="lead mt-4">
-                            <a style="position:absolute;
-                              left: 70%;
-                              margin-bottom:60%;" href="http://localhost:5000/">Welcome Page</a>
+                        <div class="col-xs-12 col-md-12 btm button">
+                            <button type="submit" class="btn btn-outline-primary">Login</button>
                         </div>
                     </div>
+                    </form>
+                    <div class="lead mt-4">
+                        <a style="position:absolute;
+                              right: 85%;
+                              margin-bottom:100%;" href="/users/register">Register</a>
+                    </div>
+                    <div class="lead mt-4">
+                        <a style="position:absolute;
+                              left: 70%;
+                              margin-bottom:60%;" href="/">Welcome Page</a>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-2"></div>
             </div>
+            <div class="col-lg-3 col-md-2"></div>
         </div>
+    </div>
 
 </body>
+<script>
+    //show the password
+    function showPassFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </html>
